@@ -45,9 +45,9 @@ export class HttpService {
             coverUrl ? coverUrl : '',
             fromEpoch,
             releaseDate,
-            gamePassValue === 't',
-            eaPlayValue === 't',
-            uPlusValue === 't'
+            gamePassValue?.substr(0,1) === 't',
+            eaPlayValue?.substr(0,1) === 't',
+            uPlusValue?.substr(0,1) === 't'
           );
           this.games.push(gameDetails);
 
