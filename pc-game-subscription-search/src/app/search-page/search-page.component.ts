@@ -6,22 +6,18 @@ import { HttpService } from '../http.service';
 @Component({
   selector: 'app-search-page',
   templateUrl: './search-page.component.html',
-  styleUrls: ['./search-page.component.scss']
+  styleUrls: ['./search-page.component.scss'],
 })
 export class SearchPageComponent implements OnInit {
   search = '';
   games: GameDetails[] = [];
   matchesOnly = false;
 
-  constructor(private httpService: HttpService) { }
+  constructor(private httpService: HttpService) {}
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   searchGames(): void {
-    this.httpService.getGames(this.search).subscribe
-      (g => this.games = g)
+    this.httpService.getGames(this.search).subscribe((g) => (this.games = g));
   }
-
 }
-

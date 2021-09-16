@@ -1,17 +1,17 @@
 export interface Query {
-  data: Property[]
+  data: Property[];
 }
 
 export interface GameResponse {
-  query: Query
+  query: Query;
 }
 
 export interface Property {
-  property: string,
-  dataitem: DataItem[]
+  property: string;
+  dataitem: DataItem[];
 }
 
 export interface DataItem {
-  type: string,
-  item: string
+  type: string;
+  item: string;
 }
