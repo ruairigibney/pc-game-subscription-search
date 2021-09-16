@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { map } from 'rxjs/operators';
@@ -11,8 +11,8 @@ import * as _ from 'lodash';
 })
 export class HttpService {
   searchUrl =
-    '/w/api.php?action=opensearch&format=json&limit=100&profile=fuzzy-subphrases&search=';
-  gameDetailsUrl = '/w/api.php?action=browsebysubject&format=json&subject=';
+    'https://www.pcgamingwiki.com/w/api.php?action=opensearch&origin=*&format=json&limit=100&profile=fuzzy-subphrases&search=';
+  gameDetailsUrl = 'https://www.pcgamingwiki.com/w/api.php?action=browsebysubject&origin=*&format=json&subject=';
 
   games: GameDetails[] = [];
 
@@ -20,6 +20,7 @@ export class HttpService {
 
   getGames(search: string): Observable<GameDetails[]> {
     this.games = [];
+    
     this.http.get<any>(this.searchUrl + search).subscribe((data) =>
       data[1].forEach((name: string) => {
         this.getGameDetails(name).subscribe((game) => {

@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "pc-game-subscription-service": {
+      "hosting": {
+        "pc-game-subscription-search": [
+          "pc-game-subscription-service"
+        ]
+      }
+    }
+  }
+}
