@@ -138,34 +138,3 @@
     </div>
   </div>
 </div>
-
-<!--
-<div *ngIf="games.length > 0">
-    <table>
-        <thead><tr><th>Title</th>
-        <th>Game Pass</th>
-        <th>EA Play</th>
-        <th>uPlay</th></tr></thead>
-
-        <div *ngFor="let game of games">
-            <div *ngIf="!matchesOnly || game.onGamePass || game.onEAPlay || game.onUPlus">
-                <td><img src={{game.coverUrl}} height=100px></td>
-                <tr><td>{{game.name}}</td>
-                <tr><td>{{game.releaseDate}}</td>
-                <tr><td>{{game.fromEpoch}}</td>
-                <td>
-                    <mat-icon *ngIf="game.onGamePass">check</mat-icon>
-                    <mat-icon *ngIf="!game.onGamePass">close</mat-icon>
-                </td>
-                <td>
-                    <mat-icon *ngIf="game.onEAPlay">check</mat-icon>
-                    <mat-icon *ngIf="!game.onEAPlay">close</mat-icon>
-                </td>
-                <td>
-                    <mat-icon *ngIf="game.onUPlus">check</mat-icon>
-                    <mat-icon *ngIf="!game.onUPlus">close</mat-icon>
-                </td>
-            </div>
-        </div>
-    </table> -->
-<!-- </div> -->
