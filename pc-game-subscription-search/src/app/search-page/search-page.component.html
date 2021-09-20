@@ -2,7 +2,7 @@
     <mat-form-field class="w-100 search-wrapper">
         <input class="search-input" type="search" matInput placeholder="Search For A Game Here..." [(ngModel)]="search" (keydown.enter)="searchGames()">
         <button class="search-button" matSuffix mat-button (click)="searchGames()"><mat-icon>search</mat-icon></button>
-        <mat-checkbox [(ngModel)]="matchesOnly">Matches Only</mat-checkbox>
+        <mat-checkbox [(ngModel)]="matchesOnly" (click)="updateRoute()">Matches Only</mat-checkbox>
     </mat-form-field>
 </div>
 
@@ -139,4 +139,8 @@
       </div>
     </a>
   </div>
+</div>
+<div class="flex wrap center container" *ngIf="games.length == 0">
+  <span>No games found with search string {{this.search}}
+    {{this.matchesOnly ? ' available on subscription services' : ''}}</span>
 </div>

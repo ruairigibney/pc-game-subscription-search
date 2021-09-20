@@ -31,7 +31,7 @@ import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
     MatIconModule,
     MatCheckboxModule,
     FormsModule,
-    ReactiveFormsModule,
+    ReactiveFormsModule
   ],
   providers: [
     {
