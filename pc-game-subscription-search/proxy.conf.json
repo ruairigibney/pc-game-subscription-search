@@ -3,6 +3,6 @@
     "target": "https://www.pcgamingwiki.com/w/api.php",
     "secure": false,
     "logLevel": "debug",
-    "changeOrigin": "true"
+    "changeOrigin": "false"
   }
 }

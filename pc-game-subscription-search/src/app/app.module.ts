@@ -15,10 +15,13 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { environment } from 'src/environments/environment';
+import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
 
 @NgModule({
   declarations: [AppComponent, SearchPageComponent],
   imports: [
+    provideFirebaseApp(() => initializeApp(environment.firebase)),
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
