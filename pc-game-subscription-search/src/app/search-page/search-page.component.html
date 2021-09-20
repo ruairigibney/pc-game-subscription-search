@@ -8,7 +8,8 @@
 
 <div class="flex wrap between container" *ngIf="games.length > 0">
   <div *ngFor="let game of games">
-    <div class="flex column game-container" *ngIf="!matchesOnly || game.onGamePass || game.onEAPlay || game.onUPlus">
+    <a target="_blank" href="https://www.pcgamingwiki.com/wiki/{{game.name}}">
+      <div class="flex column game-container" *ngIf="!matchesOnly || game.onGamePass || game.onEAPlay || game.onUPlus">
       <div class="flex game-info">
         <div>
           <img *ngIf="game.coverUrl;else placeHolderImg" src={{game.coverUrl}} height=100px>
@@ -135,6 +136,7 @@
           <mat-icon class="red-svg" *ngIf="!game.onUPlus">close</mat-icon>
         </div>
       </div>
-    </div>
+      </div>
+    </a>
   </div>
 </div>
