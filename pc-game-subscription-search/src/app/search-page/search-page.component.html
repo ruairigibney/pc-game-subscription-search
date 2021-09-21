@@ -19,7 +19,7 @@
         </div>
         <div class="flex column between game-details">
           <div class="flex align-center"><p>Title:</p> <h2>{{game.name ? game.name : 'N/A'}}</h2></div>
-          <div class="flex align-center"><p>Released:</p> <h2>{{game.releaseDate ? game.releaseDate : 'N/A'}}</h2></div>
+          <div class="flex align-center"><p>Released:</p> <h2>{{game.releaseDate ? game.releaseDate?.substr(2) : 'N/A'}}</h2></div>
           <div class="flex column align-start end">
             <p class="available">Available on:</p>
           </div>
