@@ -1,15 +1,15 @@
 <div>
-    <mat-form-field class="w-100">
-        <input type="search" matInput placeholder="Game" [(ngModel)]="search" (keydown.enter)="searchGames()">
-        <button matSuffix mat-button (click)="searchGames()"><mat-icon>search</mat-icon></button>
+    <mat-form-field class="w-100 search-wrapper">
+        <input class="search-input" type="search" matInput placeholder="Search For A Game Here..." [(ngModel)]="search" (keydown.enter)="searchGames()">
+        <button class="search-button" matSuffix mat-button (click)="searchGames()"><mat-icon>search</mat-icon></button>
         <mat-checkbox [(ngModel)]="matchesOnly">Matches Only</mat-checkbox>
     </mat-form-field>
 </div>
 
-<div class="flex wrap between container" *ngIf="games.length > 0">
+<div class="flex wrap center game-wrap container" *ngIf="games.length > 0">
   <div *ngFor="let game of games">
-    <a target="_blank" href="https://www.pcgamingwiki.com/wiki/{{game.name}}">
-      <div class="flex column game-container" *ngIf="!matchesOnly || game.onGamePass || game.onEAPlay || game.onUPlus">
+    <a target="_blank" href="https://www.pcgamingwiki.com/wiki/{{game.name}}" *ngIf="!matchesOnly || game.onGamePass || game.onEAPlay || game.onUPlus">
+      <div class="flex column game-container" >
       <div class="flex game-info">
         <div>
           <img *ngIf="game.coverUrl;else placeHolderImg" src={{game.coverUrl}} height=100px>
@@ -18,8 +18,8 @@
           </ng-template>
         </div>
         <div class="flex column between game-details">
-          <div class="flex align-center"><p>Title:</p> <h2>{{game.name}}</h2></div>
-          <div class="flex align-center"><p>Release Date:</p> <h2>{{game.releaseDate}}</h2></div>
+          <div class="flex align-center"><p>Title:</p> <h2>{{game.name ? game.name : 'N/A'}}</h2></div>
+          <div class="flex align-center"><p>Released:</p> <h2>{{game.releaseDate ? game.releaseDate : 'N/A'}}</h2></div>
           <div class="flex column align-start end">
             <p class="available">Available on:</p>
           </div>
